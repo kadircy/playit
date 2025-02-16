@@ -32,6 +32,6 @@ pub fn search(query: &str) -> Result<String, String> {
         return Err("Unable to convert u8 bytes to string".to_string());
     }
 
-    // Return the URL after removing any extra quotes
-    Ok(stdout.unwrap().replace("\"", ""))
+    // Return the URL after removing any extra quotes and newlines.
+    Ok(stdout.unwrap().replace("\"", "").replace("\n", ""))
 }

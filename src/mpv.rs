@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::process::Command;
 
 /// Type alias for a collection of MPV command-line arguments
-pub type MpvArgs = HashMap<String, String>;
+pub type MpvArgs = HashMap<String, Option<String>>;
 
 /// Represents an MPV instance with media and associated arguments
 pub struct Mpv {
@@ -25,10 +25,7 @@ impl Mpv {
     }
 
     /// Spawns the MPV player with the specified audio and arguments
-    pub fn spawn(&self) {
-        // Log the audio being played
-        println!("{}", &self.audio);
-
+    pub fn spawn(&self) -> u32 {
         let mut command = Command::new("mpv");
 
         // Add the audio file or URL to the MPV command
@@ -38,16 +35,21 @@ impl Mpv {
         if let Some(args) = &self.args {
             for (key, value) in args.iter() {
                 command.arg(key);
-                command.arg(value);
+                if value.is_some() {
+                    command.arg(value.as_ref().unwrap());
+                }
             }
         }
 
         // Execute the command and handle errors if any
         match command.spawn() {
-            Ok(_) => (), // Successfully spawned MPV, not need do anything
+            Ok(child) => {
+                return child.id();
+            }
             Err(e) => {
                 error("An error occurred while spawning the MPV command");
                 error(e); // Log the error details
+                return 0;
             }
         };
     }
