@@ -6,7 +6,8 @@ pub mod youtube;
 
 use crate::log::*;
 use clap::{ArgGroup, Parser};
-use std::collections::HashMap;
+use rand::seq::SliceRandom;
+use std::collections::HashMap; // For shuffling playlist
 
 #[derive(Debug, Parser)]
 #[clap(
@@ -18,43 +19,85 @@ use std::collections::HashMap;
     group = ArgGroup::new("play_options").required(false).args(&["play", "playlist"])
 )]
 pub struct Cli {
-    /// Play an audio with an url or a search query.
+    /// The URL or search query to play.
+    ///
+    /// If a valid URL is provided, it will play the media from that URL.
+    /// If a search query is provided, it will attempt to find the media using YouTube search.
     #[clap(long, short = 'p')]
     play: Option<String>,
 
-    /// Opens an mpv window instead of playing it in background.
-    #[clap(long, short = 'v', default_value_t = false)]
+    /// Flag to specify whether the video should be played in an MPV window.
+    ///
+    /// Set to `true` (pass this option to arguments) to open the video in a window.
+    /// Set to `false` (default) to play in the background without opening a window.
+    #[clap(long, short = 'w', default_value_t = false)]
     show_video: bool,
 
-    /// Play video without audio. Opens an mpv window.
-    #[clap(long, short = 'w', default_value_t = false)]
+    /// Flag to play only the video (without audio).
+    ///
+    /// Set to `true` (pass this option to arguments) to play only the video, and the audio will be muted.
+    /// Set to `false` (default) to play both audio and video.
+    #[clap(long, default_value_t = false)]
     only_video: bool,
 
-    /// Select an playlist to play and modify.
+    /// The name of a playlist to play or modify.
+    ///
+    /// If specified, it will attempt to load the playlist and play it.
+    /// Playlists can be used to manage multiple media files.
     #[clap(long, short = 'l')]
     playlist: Option<String>,
 
-    /// PLAYLIST ONLY: Add a new media to selected playlist.
+    /// (PLAYLIST ONLY) Add a new media item to the selected playlist.
+    ///
+    /// This option accepts a query (e.g., a song name or URL) to add a new media item to the playlist.
     #[clap(long, short = 'a')]
     add: Option<String>,
 
-    /// PLAYLIST ONLY: Remove a media from selected playlist with given query.
+    /// (PLAYLIST ONLY) Remove a media item from the selected playlist based on a query.
+    ///
+    /// This option accepts a query to find and remove a specific media item from the playlist.
     #[clap(long, short = 'r')]
     remove: Option<String>,
 
-    /// PLAYLIST ONLY: Play the selected playlist with mpv.
+    /// (PLAYLIST ONLY) Play the selected playlist using MPV.
+    ///
+    /// This option will play all the media in the specified playlist using MPV.
     #[clap(long, default_value_t = false)]
     play_playlist: bool,
+
+    /// (PLAYLIST ONLY) Shuffle the playlist items.
+    ///
+    /// This option will randomize the order of the media items in the playlist.
+    #[clap(long, short = 's', default_value_t = false)]
+    shuffle: bool,
+
+    /// Set the volume for MPV playback.
+    ///
+    /// This option accepts an integer value to set the volume level (0-100). Default is 100.
+    #[clap(long, short = 'v', default_value_t = 100)]
+    volume: u8,
+
+    /// Loop the playlist when it finishes.
+    ///
+    /// This option will repeat the playlist once it is finished.
+    #[clap(long, default_value_t = false)]
+    loop_playlist: bool,
+
+    /// Mute the audio during playback.
+    ///
+    /// This option will mute the audio while the media is playing.
+    #[clap(long, short = 'm', default_value_t = false)]
+    mute: bool,
 }
 
 fn main() {
     let args = Cli::parse();
 
-    // If there is a playlist, we don't require --play argument
+    // Determine the URL to be played based on the provided arguments
     let url: String = if let Some(ref playlist_name) = args.playlist {
         playlist_name.to_string()
     } else if let Some(play) = args.play {
-        // Otherwise, use the --play argument
+        // Handle provided URL or search query for YouTube
         if utils::is_url(&play) {
             info("Using provided URL directly.");
             play
@@ -63,74 +106,100 @@ fn main() {
                 Ok(url) => url,
                 Err(e) => {
                     error("Error fetching URL from YouTube.");
-                    error(e);
+                    error(&e); // Log the error details
                     std::process::exit(1);
                 }
             }
         }
     } else {
-        // If neither `--playlist` nor `--play` are provided, exit with an error
+        // Handle missing `--playlist` or `--play`
         error("Either --playlist or --play must be provided.");
         std::process::exit(1);
     };
 
-    // Prepare mpv arguments
+    // Prepare MPV arguments based on user preferences
     let mut mpv_args: mpv::MpvArgs = HashMap::new();
+
+    // Handle the video options
     if !args.show_video && !args.only_video {
-        mpv_args.insert("--no-video".to_string(), None);
+        mpv_args.insert("--no-video".to_string(), None); // Play without video
     }
     if args.only_video {
-        mpv_args.insert("--no-audio".to_string(), None);
+        mpv_args.insert("--no-audio".to_string(), None); // Play only video
     }
 
-    // If a playlist is specified, handle the playlist logic
+    // Set volume
+    mpv_args.insert("--volume".to_string(), Some(args.volume.to_string()));
+
+    // Mute the audio if specified
+    if args.mute {
+        mpv_args.insert("--mute".to_string(), None); // Mute the audio
+    }
+
+    // Handle playlist-related logic if specified
     if let Some(ref playlist_name) = args.playlist {
         let mut playlist = playlist::Playlist::new(&playlist_name);
 
         if std::fs::exists(&playlist.path).unwrap_or(false) {
-            playlist.read().unwrap();
-        }
-
-        if args.add.is_some() {
-            playlist.add(args.add.unwrap());
-        }
-
-        if args.remove.is_some() {
-            playlist.remove(args.remove.unwrap());
-        }
-
-        match playlist.write() {
-            Ok(_) => (),
-            Err(e) => {
-                error("Unable to write playlist.");
-                error(e);
+            // Try reading the playlist if it exists
+            if let Err(e) = playlist.read() {
+                error("Error reading playlist.");
+                error(&e); // Log detailed error message
                 std::process::exit(1);
             }
-        };
+        }
 
+        // Add media to the playlist if the `--add` option is specified
+        if let Some(ref add_query) = args.add {
+            playlist.add(add_query);
+        }
+
+        // Remove media from the playlist if the `--remove` option is specified
+        if let Some(ref remove_query) = args.remove {
+            playlist.remove(remove_query);
+        }
+
+        // Write the updated playlist back to disk
+        if let Err(e) = playlist.write() {
+            error("Unable to write playlist.");
+            error(&e); // Log detailed error message
+            std::process::exit(1);
+        }
+
+        // Shuffle playlist if the `--shuffle` option is specified
+        if args.shuffle {
+            playlist.items.shuffle(&mut rand::rng()); // Shuffle playlist
+            info("Playlist items shuffled.");
+        }
+
+        // Loop the playlist if the `--loop_playlist` option is specified
+        if args.loop_playlist {
+            mpv_args.insert("--loop".to_string(), None); // Enable loop
+        }
+
+        // Play the playlist if the `--play_playlist` option is specified
         if args.play_playlist {
-            // Read and play playlist
             match playlist.read() {
                 Ok(_) => {
-                    let first_audio = &playlist.items.get(0).unwrap();
+                    let first_audio = playlist.items.get(0).expect("Playlist should not be empty");
                     for media in &playlist.items[1..] {
                         mpv_args.insert(media.to_string(), None);
                     }
                     let mpv = mpv::Mpv::new(first_audio.to_string(), Some(mpv_args.clone()));
-                    info("Spawning mpv instance.");
+                    info("Spawning mpv instance to play playlist.");
                     let id = mpv.spawn();
                     info("Process id:");
                     println!("{}", id);
                 }
                 Err(e) => {
                     error("Error reading playlist.");
-                    error(e);
+                    error(&e); // Log the error details
                     std::process::exit(1);
                 }
             }
         }
     } else {
-        // Otherwise, handle the provided URL (either from --play or search)
+        // Play a single media URL (either from --play or search)
         let mpv = mpv::Mpv::new(url, Some(mpv_args));
         info("Spawning mpv instance.");
         let id = mpv.spawn();
