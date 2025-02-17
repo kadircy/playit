@@ -6,6 +6,8 @@ The goal of this project is playing audio without worry about anything.
 
 Also you can integrate `playit` with almost everything like [dmenu](#integrate#dmenu) / [rofi](#integrate#rofi) / [tofi](#integrate#tofi) and their alternatives.
 
+![Demo Gif](./assets/demo.gif)
+
 ## Installation
 
 **Note:** playit requires [mpv](https://mpv.io) and [youtube-dlp](https://github.com/yt-dlp/yt-dlp) for runtime dependencies.
