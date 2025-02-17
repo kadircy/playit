@@ -39,7 +39,7 @@ impl Mpv {
             for (key, value) in args.iter() {
                 let mut arg: String = String::from(key);
                 if let Some(val) = value {
-                    arg.push_str("=");
+                    arg.push('=');
                     arg.push_str(val);
                 }
                 command.arg(&arg);
@@ -54,7 +54,7 @@ impl Mpv {
                 child.id()
             }
             Err(e) => {
-                error(&format!(
+                error(format!(
                     "An error occurred while spawning the MPV command: {}",
                     e
                 ));
@@ -70,7 +70,7 @@ fn log_spawn_details(audio: &str, args: &Option<MpvArgs>) {
         Some(arguments) => format!("{:?}", arguments),
         None => String::from("No arguments provided"),
     };
-    info(&format!(
+    info(format!(
         "mpv spawn details:\n  Audio: {}\n  Arguments: {}",
         audio, args_str
     ));

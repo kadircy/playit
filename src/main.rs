@@ -3,11 +3,10 @@ pub mod mpv;
 pub mod playlist;
 pub mod utils;
 pub mod youtube;
-
 use crate::log::*;
 use clap::{ArgGroup, Parser};
 use rand::seq::SliceRandom;
-use std::collections::HashMap; // For shuffling playlist
+use std::collections::HashMap;
 
 #[derive(Debug, Parser)]
 #[clap(
@@ -138,7 +137,7 @@ fn main() {
 
     // Handle playlist-related logic if specified
     if let Some(ref playlist_name) = args.playlist {
-        let mut playlist = playlist::Playlist::new(&playlist_name);
+        let mut playlist = playlist::Playlist::new(playlist_name);
 
         if std::fs::exists(&playlist.path).unwrap_or(false) {
             // Try reading the playlist if it exists
@@ -181,7 +180,10 @@ fn main() {
         if args.play_playlist {
             match playlist.read() {
                 Ok(_) => {
-                    let first_audio = playlist.items.get(0).expect("Playlist should not be empty");
+                    let first_audio = playlist
+                        .items
+                        .first()
+                        .expect("Playlist should not be empty");
                     for media in &playlist.items[1..] {
                         mpv_args.insert(media.to_string(), None);
                     }
@@ -189,7 +191,7 @@ fn main() {
                     info("Spawning mpv instance to play playlist.");
                     let id = mpv.spawn();
                     info("Process id:");
-                    println!("{}", id);
+                    println!("  {}", id);
                 }
                 Err(e) => {
                     error("Error reading playlist.");
@@ -204,6 +206,6 @@ fn main() {
         info("Spawning mpv instance.");
         let id = mpv.spawn();
         info("Process id:");
-        println!("{}", id);
+        println!("  {}", id);
     }
 }

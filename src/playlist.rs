@@ -36,7 +36,10 @@ impl Playlist {
                 "{}",
                 &config_dir()
                     .unwrap_or_else(|| {
-                        panic!("Unable to retrieve the configuration directory.");
+                        // TODO: Maybe using `$HOME/.config` as fallback will be good.
+                        // But now, let's just throw errors
+                        error("Unable to retrieve the configuration directory.");
+                        std::process::exit(1);
                     })
                     .display()
                     .to_string()
@@ -45,7 +48,7 @@ impl Playlist {
         );
 
         // Log the creation of the new playlist
-        info(&format!("Creating new playlist: {}", name));
+        info(format!("Creating new playlist: {}", name));
         Playlist {
             path,
             items: Vec::new(),
@@ -62,7 +65,7 @@ impl Playlist {
         let content = match fs::read_to_string(&self.path) {
             Ok(content) => content,
             Err(_) => {
-                error(&format!(
+                error(format!(
                     "Failed to read the playlist file at: {}",
                     self.path
                 ));
@@ -74,11 +77,11 @@ impl Playlist {
         match serde_json::from_str::<Vec<String>>(&content) {
             Ok(data) => {
                 self.items = data;
-                info(&format!("Playlist loaded successfully from: {}", self.path)); // Log successful loading
+                info(format!("Playlist loaded successfully from: {}", self.path)); // Log successful loading
                 Ok(())
             }
             Err(_) => {
-                error(&format!(
+                error(format!(
                     "Failed to parse the playlist JSON from: {}",
                     self.path
                 ));
@@ -103,7 +106,7 @@ impl Playlist {
             match search(query) {
                 Ok(result) => result,
                 Err(_) => {
-                    warning(&format!(
+                    warning(format!(
                         "Search query '{}' did not return a valid result.",
                         query
                     )); // Log a warning for failed search
@@ -114,7 +117,7 @@ impl Playlist {
 
         // Add the valid URL to the playlist.
         self.items.push(url);
-        info(&format!("Added URL to playlist: {}", query)); // Log added URL
+        info(format!("Added URL to playlist: {}", query)); // Log added URL
     }
 
     /// Removes a URL from the playlist based on an exact match.
@@ -128,9 +131,9 @@ impl Playlist {
         // Find the index of the item that matches the query, and remove it if found.
         if let Some(index) = self.items.iter().position(|item| item == query) {
             self.items.remove(index);
-            info(&format!("Removed URL from playlist: {}", query)); // Log URL removal
+            info(format!("Removed URL from playlist: {}", query)); // Log URL removal
         } else {
-            warning(&format!(
+            warning(format!(
                 "URL '{}' not found in the playlist, nothing to remove.",
                 query
             )); // Log a warning for non-existent URL
@@ -147,9 +150,7 @@ impl Playlist {
         let content = match serde_json::to_string(&self.items) {
             Ok(content) => content,
             Err(_) => {
-                error(
-                    &"Failed to convert playlist items to string for writing to file.".to_string(),
-                );
+                error("Failed to convert playlist items to string for writing to file.");
                 return Err("Failed to convert playlist items to string.".to_string());
             }
         };
@@ -157,11 +158,11 @@ impl Playlist {
         // Write the content to the playlist file.
         match fs::write(&self.path, content) {
             Ok(_) => {
-                info(&format!("Playlist successfully written to: {}", self.path)); // Log successful write
+                info(format!("Playlist successfully written to: {}", self.path)); // Log successful write
                 Ok(())
             }
             Err(e) => {
-                error(&format!(
+                error(format!(
                     "Error writing to playlist file at {}: {}",
                     self.path, e
                 )); // Log error during write
