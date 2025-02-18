@@ -135,6 +135,11 @@ fn main() {
         mpv_args.insert("--mute".to_string(), None); // Mute the audio
     }
 
+    // Loop the audio if specified
+    if args.loop_audio {
+        mpv_args.insert("--loop".to_string(), None); // Loop the audio
+    }
+
     // Handle playlist-related logic if specified
     if let Some(ref playlist_name) = args.playlist {
         let mut playlist = playlist::Playlist::new(playlist_name);
@@ -169,10 +174,6 @@ fn main() {
         if args.shuffle {
             playlist.items.shuffle(&mut rand::rng()); // Shuffle playlist
             info("Playlist items shuffled.");
-        }
-
-        if args.loop_audio {
-            mpv_args.insert("--loop".to_string(), None);
         }
 
         // Play the playlist if the `--play_playlist` option is specified
