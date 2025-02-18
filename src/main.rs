@@ -76,11 +76,11 @@ pub struct Cli {
     #[clap(long, short = 'v', default_value_t = 100)]
     volume: u8,
 
-    /// Loop the playlist when it finishes.
+    /// Loop the audio or playlist when it finishes.
     ///
-    /// This option will repeat the playlist once it is finished.
-    #[clap(long, default_value_t = false)]
-    loop_playlist: bool,
+    /// This option will repeat the audio once it is finished.
+    #[clap(long = "loop", default_value_t = false)]
+    loop_audio: bool,
 
     /// Mute the audio during playback.
     ///
@@ -171,15 +171,19 @@ fn main() {
             info("Playlist items shuffled.");
         }
 
-        // Loop the playlist if the `--loop_playlist` option is specified
-        if args.loop_playlist {
-            mpv_args.insert("--loop".to_string(), None); // Enable loop
+        if args.loop_audio {
+            mpv_args.insert("--loop".to_string(), None);
         }
 
         // Play the playlist if the `--play_playlist` option is specified
         if args.play_playlist {
             match playlist.read() {
                 Ok(_) => {
+                    if playlist.items.first().is_none() {
+                        error("The playlist is empty. Add some querys with `--add` flag.");
+                        std::process::exit(1);
+                    }
+
                     let first_audio = playlist
                         .items
                         .first()
@@ -187,7 +191,7 @@ fn main() {
                     for media in &playlist.items[1..] {
                         mpv_args.insert(media.to_string(), None);
                     }
-                    let mpv = mpv::Mpv::new(first_audio.to_string(), Some(mpv_args.clone()));
+                    let mpv = mpv::Mpv::new(first_audio.to_string(), Some(mpv_args));
                     info("Spawning mpv instance to play playlist.");
                     let id = mpv.spawn();
                     info("Process id:");
