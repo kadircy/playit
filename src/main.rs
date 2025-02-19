@@ -180,6 +180,7 @@ fn main() {
         if args.play_playlist {
             match playlist.read() {
                 Ok(_) => {
+                    // If the playlist is empty, give an error message
                     if playlist.items.first().is_none() {
                         error("The playlist is empty. Add some querys with `--add` flag.");
                         std::process::exit(1);
