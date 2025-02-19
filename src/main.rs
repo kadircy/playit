@@ -193,11 +193,7 @@ fn main() {
                     for media in &playlist.items[1..] {
                         mpv_args.insert(media.to_string(), None);
                     }
-                    let mpv = mpv::Mpv::new(first_audio.to_string(), Some(mpv_args));
-                    info("Spawning mpv instance to play playlist.");
-                    let id = mpv.spawn();
-                    info("Process id:");
-                    println!("  {}", id);
+                    start_instance(&first_audio, mpv_args);
                 }
                 Err(e) => {
                     error("Error reading playlist.");
@@ -208,10 +204,14 @@ fn main() {
         }
     } else {
         // Play a single media URL (either from --play or search)
-        let mpv = mpv::Mpv::new(url, Some(mpv_args));
-        info("Spawning mpv instance.");
-        let id = mpv.spawn();
-        info("Process id:");
-        println!("  {}", id);
+        start_instance(&url, mpv_args);
     }
+}
+
+fn start_instance(url: &str, mpv_args: mpv::MpvArgs) {
+    let mpv = mpv::Mpv::new(url.to_string(), Some(mpv_args));
+    info("Spawning mpv instance");
+    let id = mpv.spawn();
+    info("Process id:");
+    println!("  {}", id);
 }
