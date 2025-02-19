@@ -181,7 +181,7 @@ fn main() {
             match playlist.read() {
                 Ok(_) => {
                     // If the playlist is empty, give an error message
-                    if playlist.items.first().is_none() {
+                    if playlist.items.is_empty() {
                         error("The playlist is empty. Add some querys with `--add` flag.");
                         std::process::exit(1);
                     }
@@ -193,7 +193,7 @@ fn main() {
                     for media in &playlist.items[1..] {
                         mpv_args.insert(media.to_string(), None);
                     }
-                    start_instance(&first_audio, mpv_args);
+                    start_instance(first_audio, mpv_args);
                 }
                 Err(e) => {
                     error("Error reading playlist.");
