@@ -145,7 +145,7 @@ impl Playlist {
     /// # Returns
     /// - `Ok(())` if the file was successfully written.
     /// - `Err(String)` if there was an error writing to the file.
-    pub fn write(&self) -> Result<(), String> {
+    pub fn write(self) -> Result<Self, String> {
         // Serialize the playlist items into a JSON string.
         let content = match serde_json::to_string(&self.items) {
             Ok(content) => content,
@@ -159,7 +159,7 @@ impl Playlist {
         match fs::write(&self.path, content) {
             Ok(_) => {
                 info(format!("Playlist successfully written to: {}", self.path)); // Log successful write
-                Ok(())
+                Ok(self)
             }
             Err(e) => {
                 error(format!(

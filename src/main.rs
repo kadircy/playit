@@ -4,6 +4,7 @@ pub mod playlist;
 pub mod utils;
 pub mod youtube;
 use crate::log::*;
+use crate::playlist::Playlist;
 use clap::{ArgGroup, Parser};
 use rand::seq::SliceRandom;
 use std::collections::HashMap;
@@ -142,7 +143,7 @@ fn main() {
 
     // Handle playlist-related logic if specified
     if let Some(ref playlist_name) = args.playlist {
-        let mut playlist = playlist::Playlist::new(playlist_name);
+        let mut playlist: Playlist = playlist::Playlist::new(playlist_name);
 
         if std::fs::exists(&playlist.path).unwrap_or(false) {
             // Try reading the playlist if it exists
@@ -163,44 +164,35 @@ fn main() {
             playlist.remove(remove_query);
         }
 
-        // Write the updated playlist back to disk
-        if let Err(e) = playlist.write() {
-            error("Unable to write playlist.");
-            error(&e); // Log detailed error message
-            std::process::exit(1);
-        }
-
         // Shuffle playlist if the `--shuffle` option is specified
         if args.shuffle {
             playlist.items.shuffle(&mut rand::rng()); // Shuffle playlist
             info("Playlist items shuffled.");
         }
 
+        if args.add.is_some() || args.remove.is_some() || args.shuffle {
+            // Write the updated playlist back to disk
+            playlist = playlist
+                .write()
+                .expect("error: Unable to write changes to playlist file.");
+        }
+
         // Play the playlist if the `--play_playlist` option is specified
         if args.play_playlist {
-            match playlist.read() {
-                Ok(_) => {
-                    // If the playlist is empty, give an error message
-                    if playlist.items.is_empty() {
-                        error("The playlist is empty. Add some querys with `--add` flag.");
-                        std::process::exit(1);
-                    }
-
-                    let first_audio = playlist
-                        .items
-                        .first()
-                        .expect("Playlist should not be empty");
-                    for media in &playlist.items[1..] {
-                        mpv_args.insert(media.to_string(), None);
-                    }
-                    start_instance(first_audio, mpv_args);
-                }
-                Err(e) => {
-                    error("Error reading playlist.");
-                    error(&e); // Log the error details
-                    std::process::exit(1);
-                }
+            // If the playlist is empty, give an error message
+            if playlist.items.is_empty() {
+                error("The playlist is empty. Add some querys with `--add` flag.");
+                std::process::exit(1);
             }
+
+            let first_audio = playlist
+                .items
+                .first()
+                .expect("Playlist should not be empty");
+            for media in &playlist.items[1..] {
+                mpv_args.insert(media.to_string(), None);
+            }
+            start_instance(first_audio, mpv_args);
         }
     } else {
         // Play a single media URL (either from --play or search)

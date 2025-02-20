@@ -1,0 +1,1349 @@
+desc: (none)
+cmd: ./target/release/playit --playlist ingilizce --play-playlist
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=263094
+mem_heap_B=472
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=263985
+mem_heap_B=1736
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=365842
+mem_heap_B=1736
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1736 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x48F5A38: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 1024 0x4904398: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4904398: _IO_doallocbuf (genops.c:342)
+    n1: 1024 0x4902213: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+     n1: 1024 0x48F73FF: getdelim (iogetdelim.c:77)
+      n1: 1024 0x490BEC4: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:122)
+       n1: 1024 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 1024 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 472 0x48F64FA: __fopen_internal (iofopen.c:65)
+  n1: 472 0x490BD92: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:85)
+   n1: 472 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 472 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 240 0x48F723E: getdelim (iogetdelim.c:107)
+  n1: 240 0x490BEC4: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:122)
+   n1: 240 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 240 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=366550
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=367469
+mem_heap_B=64
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=detailed
+n8: 64 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 64 0x12C1B0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 64 0x11DF41: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 64 0x125E7C: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 64 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 64 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 64 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 64 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 0 0x48F5A38: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 0 0x4904398: _IO_doallocbuf (genops.c:347)
+   n1: 0 0x4904398: _IO_doallocbuf (genops.c:342)
+    n1: 0 0x4902213: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+     n1: 0 0x48F73FF: getdelim (iogetdelim.c:77)
+      n1: 0 0x490BEC4: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:122)
+       n1: 0 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 0 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 0 0x48F64FA: __fopen_internal (iofopen.c:65)
+  n1: 0 0x490BD92: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:85)
+   n1: 0 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 0 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 0 0x48F723E: getdelim (iogetdelim.c:107)
+  n1: 0 0x490BEC4: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:122)
+   n1: 0 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 0 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 0 0x48F736D: getdelim (iogetdelim.c:65)
+  n1: 0 0x490BEC4: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:122)
+   n1: 0 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 0 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 0 0x4908472: __pthread_attr_extension (pthread_attr_extension.c:28)
+  n1: 0 0x4908737: pthread_attr_setaffinity_np@@GLIBC_2.32 (pthread_attr_setaffinity.c:45)
+   n1: 0 0x490BCFD: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:194)
+    n1: 0 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n0: 0 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 0 0x4908750: pthread_attr_setaffinity_np@@GLIBC_2.32 (pthread_attr_setaffinity.c:51)
+  n1: 0 0x490BCFD: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:194)
+   n1: 0 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 0 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 0 0x490BC99: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:180)
+  n1: 0 0x129FED: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n0: 0 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+#-----------
+snapshot=6
+#-----------
+time=368853
+mem_heap_B=3273
+mem_heap_extra_B=55
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=370057
+mem_heap_B=3858
+mem_heap_extra_B=158
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=371050
+mem_heap_B=4111
+mem_heap_extra_B=225
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=372480
+mem_heap_B=7190
+mem_heap_extra_B=314
+mem_stacks_B=0
+heap_tree=detailed
+n3: 7190 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 5056 0x12C1C3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 4800 0x13A3F4: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 4800 0x127518: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 4800 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 4800 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 4800 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 4800 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n1: 256 0x11DF41: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 256 0x125E7C: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 256 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 256 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 256 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 256 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n3: 1980 0x12C1B0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n9: 1596 0x112133: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n0: 294 in 6 places, all below massif's threshold (1.00%)
+   n1: 223 0x1265AC: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 223 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 223 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 223 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 223 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 199 0x126B11: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 199 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 199 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 199 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 199 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 186 0x1260F9: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 186 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 186 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 186 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 186 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 169 0x1278DD: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 169 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 169 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 169 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 169 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 160 0x127025: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 160 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 160 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 160 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 160 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 159 0x127478: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 159 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 159 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 159 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 159 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 127 0x127D8F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 127 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 127 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 127 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 127 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 79 0x12783D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 79 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 79 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 79 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 79 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n1: 384 0x11E185: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 384 0x125F47: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 384 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 384 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 384 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 384 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n0: 154 in 17 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=10
+#-----------
+time=374053
+mem_heap_B=7608
+mem_heap_extra_B=472
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=375176
+mem_heap_B=12620
+mem_heap_extra_B=556
+mem_stacks_B=0
+heap_tree=detailed
+n3: 12620 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 9856 0x12C1C3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 9600 0x13A3F4: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 9600 0x128A50: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 9600 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 9600 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 9600 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 9600 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 256 0x11DF41: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 256 0x125E7C: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 256 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 256 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 256 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 256 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n3: 2432 0x12C1B0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n7: 2048 0x112133: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n0: 952 in 14 places, all below massif's threshold (1.00%)
+   n1: 223 0x1265AC: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 223 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 223 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 223 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 223 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 199 0x126B11: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 199 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 199 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 199 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 199 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 186 0x1260F9: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 186 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 186 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 186 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 186 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 169 0x1278DD: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 169 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 169 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 169 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 169 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 160 0x127025: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 160 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 160 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 160 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 160 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 159 0x127478: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 159 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 159 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 159 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 159 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n1: 384 0x11E185: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 384 0x125F47: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 384 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 384 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 384 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 384 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n0: 332 in 27 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=375944
+mem_heap_B=12825
+mem_heap_extra_B=615
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=377028
+mem_heap_B=13138
+mem_heap_extra_B=694
+mem_stacks_B=0
+heap_tree=detailed
+n3: 13138 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 9856 0x12C1C3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 9600 0x13A3F4: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 9600 0x128A50: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 9600 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 9600 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 9600 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 9600 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 256 0x11DF41: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 256 0x125E7C: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 256 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 256 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 256 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 256 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n3: 2680 0x12C1B0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n7: 2232 0x112133: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n0: 1136 in 17 places, all below massif's threshold (1.00%)
+   n1: 223 0x1265AC: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 223 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 223 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 223 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 223 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 199 0x126B11: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 199 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 199 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 199 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 199 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 186 0x1260F9: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 186 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 186 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 186 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 186 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 169 0x1278DD: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 169 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 169 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 169 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 169 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 160 0x127025: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 160 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 160 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 160 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 160 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 159 0x127478: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 159 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 159 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 159 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 159 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n1: 384 0x11E185: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 384 0x125F47: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 384 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 384 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 384 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 384 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n0: 64 in 2 places, all below massif's threshold (1.00%)
+ n0: 602 in 31 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=14
+#-----------
+time=378019
+mem_heap_B=13132
+mem_heap_extra_B=756
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=379614
+mem_heap_B=14060
+mem_heap_extra_B=812
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=381218
+mem_heap_B=14069
+mem_heap_extra_B=827
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=382459
+mem_heap_B=14229
+mem_heap_extra_B=843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=383545
+mem_heap_B=15197
+mem_heap_extra_B=915
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=384379
+mem_heap_B=15653
+mem_heap_extra_B=971
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=385629
+mem_heap_B=16054
+mem_heap_extra_B=1034
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=386355
+mem_heap_B=16154
+mem_heap_extra_B=1062
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=387377
+mem_heap_B=16543
+mem_heap_extra_B=1121
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=388646
+mem_heap_B=16796
+mem_heap_extra_B=1188
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=390012
+mem_heap_B=17684
+mem_heap_extra_B=1244
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=390905
+mem_heap_B=17905
+mem_heap_extra_B=1295
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=392344
+mem_heap_B=18262
+mem_heap_extra_B=1346
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=393439
+mem_heap_B=18638
+mem_heap_extra_B=1394
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=394420
+mem_heap_B=18857
+mem_heap_extra_B=1447
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=395889
+mem_heap_B=19246
+mem_heap_extra_B=1490
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=396777
+mem_heap_B=20422
+mem_heap_extra_B=1530
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=397979
+mem_heap_B=20651
+mem_heap_extra_B=1573
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=399093
+mem_heap_B=21203
+mem_heap_extra_B=1621
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=399978
+mem_heap_B=21427
+mem_heap_extra_B=1645
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=402748
+mem_heap_B=21435
+mem_heap_extra_B=1661
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=402994
+mem_heap_B=21467
+mem_heap_extra_B=1669
+mem_stacks_B=0
+heap_tree=peak
+n3: 21467 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 12608 0x12C1C3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 9600 0x13A3F4: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 9600 0x128A50: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 9600 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 9600 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 9600 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 9600 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 1664 0x1451A4: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 1664 0x14D22C: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 1664 0x162FAC: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 1664 0x147821: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 1664 0x14E754: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 1664 0x144017: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 1664 0x13DAF0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n1: 1664 0x123E4E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+          n1: 1664 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+           n1: 1664 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+            n0: 1664 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n1: 832 0x13BB31: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 832 0x138AB2: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 832 0x13DA76: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 832 0x123E4E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 832 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 832 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 832 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n2: 512 0x11DF41: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 256 0x125E7C: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 256 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 256 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 256 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 256 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 256 0x14D1F7: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 256 0x162FAC: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 256 0x147821: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 256 0x14E754: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 256 0x144017: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 256 0x13DAF0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n1: 256 0x123E4E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+          n1: 256 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+           n1: 256 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+            n0: 256 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n8: 7660 0x12C1B0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 2316 0x112133: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n0: 2316 in 28 places, all below massif's threshold (1.00%)
+  n1: 1408 0x13BB31: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 1408 0x14D57F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n2: 1024 0x163880: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n2: 768 0x147935: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 640 0x14E754: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 640 0x144017: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 640 0x13DAF0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n1: 640 0x123E4E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+          n1: 640 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+           n1: 640 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+            n0: 640 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+      n0: 128 in 1 place, below massif's threshold (1.00%)
+     n1: 256 0x147414: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n0: 256 in 2 places, all below massif's threshold (1.00%)
+    n2: 384 0x1630D3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 256 0x147401: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 256 0x1484D5: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 256 0x14611D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 256 0x140CEB: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n1: 256 0x13DAF0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+          n1: 256 0x123E4E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+           n1: 256 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+            n1: 256 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+             n0: 256 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+     n0: 128 in 1 place, below massif's threshold (1.00%)
+  n2: 1056 0x14AAF8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 1056 0x14D5DA: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n2: 768 0x163880: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n2: 576 0x147935: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 480 0x14E754: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 480 0x144017: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 480 0x13DAF0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n1: 480 0x123E4E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+          n1: 480 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+           n1: 480 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+            n0: 480 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+      n0: 96 in 1 place, below massif's threshold (1.00%)
+     n0: 192 in 1 place, below massif's threshold (1.00%)
+    n1: 288 0x1630D3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n0: 288 in 2 places, all below massif's threshold (1.00%)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n2: 960 0x14D365: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 768 0x162FE4: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n2: 576 0x147821: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 480 0x14E754: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 480 0x144017: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 480 0x13DAF0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 480 0x123E4E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n1: 480 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+          n1: 480 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+           n0: 480 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+     n0: 96 in 1 place, below massif's threshold (1.00%)
+    n0: 192 in 1 place, below massif's threshold (1.00%)
+   n0: 192 in 1 place, below massif's threshold (1.00%)
+  n2: 960 0x14D455: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 768 0x163023: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n2: 576 0x147821: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 480 0x14E754: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 480 0x144017: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 480 0x13DAF0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 480 0x123E4E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n1: 480 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+          n1: 480 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+           n0: 480 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+     n0: 96 in 1 place, below massif's threshold (1.00%)
+    n0: 192 in 1 place, below massif's threshold (1.00%)
+   n0: 192 in 1 place, below massif's threshold (1.00%)
+  n1: 384 0x11E185: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 384 0x125F47: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 384 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 384 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 384 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n0: 384 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n0: 288 in 4 places, all below massif's threshold (1.00%)
+  n2: 288 0x1366F2: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 256 0x163902: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 256 in 2 places, all below massif's threshold (1.00%)
+   n0: 32 in 1 place, below massif's threshold (1.00%)
+ n0: 1199 in 45 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=36
+#-----------
+time=403688
+mem_heap_B=21459
+mem_heap_extra_B=1653
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=405855
+mem_heap_B=21363
+mem_heap_extra_B=1637
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=406622
+mem_heap_B=20751
+mem_heap_extra_B=1505
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=407577
+mem_heap_B=19026
+mem_heap_extra_B=1254
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=408762
+mem_heap_B=7424
+mem_heap_extra_B=944
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=410075
+mem_heap_B=6467
+mem_heap_extra_B=829
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=410998
+mem_heap_B=5749
+mem_heap_extra_B=707
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=412408
+mem_heap_B=5017
+mem_heap_extra_B=607
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=413793
+mem_heap_B=3844
+mem_heap_extra_B=404
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=415112
+mem_heap_B=2130
+mem_heap_extra_B=206
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=415991
+mem_heap_B=281
+mem_heap_extra_B=231
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=417372
+mem_heap_B=295
+mem_heap_extra_B=265
+mem_stacks_B=0
+heap_tree=detailed
+n8: 295 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 212 0x1119E6: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 212 0x11EAE1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 212 0x120A24: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 212 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 212 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n0: 212 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 30 0x11B374: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n6: 30 0x113DF3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 5 0x11168F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 5 0x128F39: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 5 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 5 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 5 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 5 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 5 0x111733: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 5 0x126B5E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 5 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 5 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 5 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 5 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 5 0x111785: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 5 0x1294CB: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 5 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 5 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 5 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 5 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 5 0x1117D7: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 5 0x1265F9: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 5 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 5 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 5 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 5 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 5 0x111829: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 5 0x1283D1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 5 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 5 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 5 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 5 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n1: 5 0x11187B: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 5 0x127E24: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 5 0x11F44D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 5 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 5 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 5 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 11 0x19E0F7: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 11 0x120E23: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 11 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 11 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n0: 11 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 10 0x1209B1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 10 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 10 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 10 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 9 0x12069D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 9 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 9 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 9 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 9 0x12F0F3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 9 0x163817: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 9 0x147414: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 9 0x1484D5: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 9 0x14611D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 9 0x140CEB: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 9 0x13DAF0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 9 0x123E4E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n1: 9 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+          n1: 9 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+           n0: 9 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 8 0x120A60: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 8 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 8 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 8 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n0: 6 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=48
+#-----------
+time=417999
+mem_heap_B=325
+mem_heap_extra_B=291
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=418986
+mem_heap_B=389
+mem_heap_extra_B=323
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=419398
+mem_heap_B=377
+mem_heap_extra_B=311
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=419863
+mem_heap_B=1406
+mem_heap_extra_B=290
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=420658
+mem_heap_B=1360
+mem_heap_extra_B=280
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=421348
+mem_heap_B=1545
+mem_heap_extra_B=295
+mem_stacks_B=0
+heap_tree=detailed
+n6: 1545 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x19F149: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 1024 0x113DF3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 1024 0x1149C3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 1024 0x19F7BC: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 1024 0x1212E0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 1024 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 1024 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 1024 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 212 0x1119E6: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 212 0x11EAE1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 212 0x120A24: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 212 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 212 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n0: 212 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n2: 185 0x12A62D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 185 0x121696: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 185 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 185 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n0: 185 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 52 0x12A616: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 52 0x111FF1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 52 0x12ADA2: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 52 0x165829: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 52 0x12AC96: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 52 0x1211E7: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 52 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 52 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n0: 52 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n0: 42 in 55 places, all below massif's threshold (1.00%)
+ n1: 30 0x11B374: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 30 0x113DF3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n0: 30 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=54
+#-----------
+time=422000
+mem_heap_B=1588
+mem_heap_extra_B=308
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=422421
+mem_heap_B=1727
+mem_heap_extra_B=329
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=422730
+mem_heap_B=1770
+mem_heap_extra_B=342
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=423060
+mem_heap_B=1813
+mem_heap_extra_B=355
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=423447
+mem_heap_B=1953
+mem_heap_extra_B=367
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=424431
+mem_heap_B=1813
+mem_heap_extra_B=355
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=424983
+mem_heap_B=1714
+mem_heap_extra_B=366
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=425409
+mem_heap_B=2122
+mem_heap_extra_B=382
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=426334
+mem_heap_B=1910
+mem_heap_extra_B=362
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=426921
+mem_heap_B=1996
+mem_heap_extra_B=388
+mem_stacks_B=0
+heap_tree=detailed
+n9: 1996 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x19F149: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 1024 0x113DF3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 1024 0x1149C3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 1024 0x19F7BC: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 1024 0x1212E0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 1024 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 1024 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 1024 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 408 0x1119E6: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 408 0x11EAE1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 408 0x123B9F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 408 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 408 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n0: 408 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 172 0x121D17: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 172 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 172 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 172 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 129 0x123B31: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 129 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 129 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 129 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n2: 96 0x12C1B0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 96 0x14AAF8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 96 0x121D51: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 96 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 96 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n0: 96 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n0: 0 in 10 places, all below massif's threshold (1.00%)
+ n1: 52 0x12A616: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 52 0x111FF1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 52 0x12ADA2: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 52 0x165829: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 52 0x12AC96: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 52 0x1211E7: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 52 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 52 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n0: 52 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 43 0x125224: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 43 0x1239D8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 43 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 43 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n0: 43 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n0: 42 in 55 places, all below massif's threshold (1.00%)
+ n1: 30 0x11B374: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 30 0x113DF3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n0: 30 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=64
+#-----------
+time=427825
+mem_heap_B=2000
+mem_heap_extra_B=424
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=428194
+mem_heap_B=2080
+mem_heap_extra_B=504
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=428483
+mem_heap_B=2096
+mem_heap_extra_B=488
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=428831
+mem_heap_B=2165
+mem_heap_extra_B=515
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=429085
+mem_heap_B=2198
+mem_heap_extra_B=514
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=429480
+mem_heap_B=2274
+mem_heap_extra_B=526
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=429728
+mem_heap_B=2247
+mem_heap_extra_B=521
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=430127
+mem_heap_B=2324
+mem_heap_extra_B=548
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=430608
+mem_heap_B=2352
+mem_heap_extra_B=568
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=431012
+mem_heap_B=2396
+mem_heap_extra_B=580
+mem_stacks_B=0
+heap_tree=detailed
+n11: 2396 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x19F149: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 1024 0x113DF3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 1024 0x1149C3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 1024 0x19F7BC: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 1024 0x1212E0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 1024 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 1024 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 1024 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 408 0x1119E6: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 408 0x11EAE1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 408 0x123B9F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 408 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 408 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n0: 408 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 204 0x12A69F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 204 0x1ACD7E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 200 0x1ACE75: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 156 0x1254D0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 156 0x1239D8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 156 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 156 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 156 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+    n1: 44 0x12533D: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 44 0x1239D8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 44 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 44 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 44 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 4 in 1 place, below massif's threshold (1.00%)
+ n3: 192 0x179F5E: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 128 0x1A2522: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 128 0x1ACED1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 128 0x1254D0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 128 0x1239D8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 128 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 128 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 128 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 64 0x1A2443: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 64 0x1ACEA6: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 64 0x1254D0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 64 0x1239D8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 64 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 64 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 64 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 172 0x121D17: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 172 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 172 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 172 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 129 0x123B31: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 129 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 129 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 129 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n2: 96 0x12C1B0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 96 0x14AAF8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 96 0x121D51: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 96 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 96 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n0: 96 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n0: 0 in 10 places, all below massif's threshold (1.00%)
+ n1: 52 0x12A616: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 52 0x111FF1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 52 0x12ADA2: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 52 0x165829: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 52 0x12AC96: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 52 0x1211E7: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 52 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 52 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n0: 52 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 46 in 58 places, all below massif's threshold (1.00%)
+ n1: 43 0x125224: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 43 0x1239D8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 43 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 43 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n0: 43 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 30 0x11B374: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 30 0x113DF3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n0: 30 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=74
+#-----------
+time=432455
+mem_heap_B=2404
+mem_heap_extra_B=596
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=432836
+mem_heap_B=2412
+mem_heap_extra_B=588
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=433100
+mem_heap_B=2428
+mem_heap_extra_B=588
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=433897
+mem_heap_B=2461
+mem_heap_extra_B=603
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=435778
+mem_heap_B=2656
+mem_heap_extra_B=600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=437042
+mem_heap_B=2740
+mem_heap_extra_B=620
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=437311
+mem_heap_B=2824
+mem_heap_extra_B=616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=438822
+mem_heap_B=2656
+mem_heap_extra_B=600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=439077
+mem_heap_B=2276
+mem_heap_extra_B=444
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=440859
+mem_heap_B=1953
+mem_heap_extra_B=375
+mem_stacks_B=0
+heap_tree=detailed
+n8: 1953 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x19F149: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 1024 0x113DF3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 1024 0x1149C3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 1024 0x19F7BC: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 1024 0x1212E0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 1024 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 1024 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n0: 1024 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 408 0x1119E6: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 408 0x11EAE1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 408 0x123B9F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 408 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 408 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n0: 408 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 172 0x121D17: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 172 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 172 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 172 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n1: 129 0x123B31: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 129 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 129 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n0: 129 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+ n2: 96 0x12C1B0: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n2: 96 0x14AAF8: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n1: 96 0x121D51: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 96 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n1: 96 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n0: 96 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+   n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n0: 0 in 10 places, all below massif's threshold (1.00%)
+ n2: 52 0x12A616: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 52 0x111FF1: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n2: 52 0x12ADA2: ??? (in /home/kadir/Projects/playit/target/release/playit)
+    n1: 52 0x165829: ??? (in /home/kadir/Projects/playit/target/release/playit)
+     n2: 52 0x12AC96: ??? (in /home/kadir/Projects/playit/target/release/playit)
+      n1: 52 0x1211E7: ??? (in /home/kadir/Projects/playit/target/release/playit)
+       n1: 52 0x11B342: ??? (in /home/kadir/Projects/playit/target/release/playit)
+        n1: 52 0x12A22F: ??? (in /home/kadir/Projects/playit/target/release/playit)
+         n0: 52 0x48A7C4B: (below main) (libc_start_call_main.h:58)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+    n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 42 in 61 places, all below massif's threshold (1.00%)
+ n1: 30 0x11B374: ??? (in /home/kadir/Projects/playit/target/release/playit)
+  n1: 30 0x113DF3: ??? (in /home/kadir/Projects/playit/target/release/playit)
+   n0: 30 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=84
+#-----------
+time=441130
+mem_heap_B=1803
+mem_heap_extra_B=269
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=441387
+mem_heap_B=1075
+mem_heap_extra_B=173
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=441633
+mem_heap_B=33
+mem_heap_extra_B=135
+mem_stacks_B=0
+heap_tree=empty
