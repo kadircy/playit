@@ -13,7 +13,6 @@ const PLAYLISTS_DIR: &str = "{}/playit";
 /// # Fields
 /// - `path`: A string representing the path to the playlist file.
 /// - `items`: A vector of strings containing the URLs of the playlist items.
-#[derive(Clone)]
 pub struct Playlist {
     pub path: String,
     pub items: Vec<String>,
