@@ -1,9 +1,11 @@
 pub mod log;
 pub mod mpv;
+pub mod notification;
 pub mod playlist;
 pub mod utils;
 pub mod youtube;
 use crate::log::*;
+use crate::notification::send_notification;
 use crate::playlist::Playlist;
 use clap::{ArgGroup, Parser};
 use rand::seq::SliceRandom;
@@ -88,6 +90,13 @@ pub struct Cli {
     /// This option will mute the audio while the media is playing.
     #[clap(long, short = 'm', default_value_t = false)]
     mute: bool,
+
+    /// Send a notification when audio starts playing.
+    ///
+    /// This option will send a notification when the media started playing.
+    /// Use '{}' for showing url in notification text.
+    #[clap(long, short = 'n', default_value_t = String::from("Now playing: {}"))]
+    notification: String,
 }
 
 fn main() {
@@ -192,18 +201,23 @@ fn main() {
             for media in &playlist.items[1..] {
                 mpv_args.insert(media.to_string(), None);
             }
-            start_instance(first_audio, mpv_args);
+            start_instance(first_audio, mpv_args, &args.notification);
         }
     } else {
         // Play a single media URL (either from --play or search)
-        start_instance(&url, mpv_args);
+        start_instance(&url, mpv_args, &args.notification);
     }
+
+    loop {};
 }
 
-fn start_instance(url: &str, mpv_args: mpv::MpvArgs) {
+fn start_instance(url: &str, mpv_args: mpv::MpvArgs, notification: &str) {
     let mpv = mpv::Mpv::new(url.to_string(), Some(mpv_args));
     info("Spawning mpv instance");
     let id = mpv.spawn();
+    if !notification.is_empty() {
+        send_notification(&notification.replace("{}", url));
+    }
     info("Process id:");
     println!("  {}", id);
 }
