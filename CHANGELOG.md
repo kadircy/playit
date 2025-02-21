@@ -1,5 +1,9 @@
 # Changelog
 ## [Unreleased]
+### Added
+- Added notification support when audio starts playing.
+- Added `--notification` option to CLI for changing notification text.
+
 ### Changed
 - The option `--loop-playlist` changed to `--loop` because it can be flagged in both `playlist` and `play` mode.
 - Replaced some codes into a function for not repeating them.
