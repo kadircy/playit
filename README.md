@@ -31,7 +31,7 @@ rustc --version
 git --version
 ```
 
-2. **Clone the Git repository`**
+2. **Clone the Git repository.**
 The compile process takes some time because of using LTO and striping when building release binaries.
 
 ```bash
@@ -89,7 +89,6 @@ If you prefer `rofi` over `dmenu`, you can achieve similar functionality with th
 ```config
 # Bind a key to launch playit with rofi input
 bind = $mainMod, P, exec, playit --play "$(rofi -dmenu < /dev/null)"
-
 ```
 
 And for playlists:
