@@ -1,5 +1,7 @@
 # Changelog
 ## [Unreleased]
+
+## [1.1.0] - 2025-02-22
 ### Added
 - Added notification support when audio starts playing.
 - Added `--notification` option to CLI for changing notification text.
