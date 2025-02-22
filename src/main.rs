@@ -207,8 +207,6 @@ fn main() {
         // Play a single media URL (either from --play or search)
         start_instance(&url, mpv_args, &args.notification);
     }
-
-    loop {};
 }
 
 fn start_instance(url: &str, mpv_args: mpv::MpvArgs, notification: &str) {
