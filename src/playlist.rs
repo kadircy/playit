@@ -27,24 +27,31 @@ impl Playlist {
     ///
     /// # Returns
     /// A new `Playlist` instance with the generated file path and an empty list of items.
-    pub fn new(name: &str) -> Self {
+    pub fn new(name: &str, prefix: Option<&str>) -> Self {
         // Construct the path for the playlist file based on the user's configuration directory.
-        let path = format!(
-            "{}/{}.pl",
-            PLAYLISTS_DIR.replace(
-                "{}",
-                &config_dir()
-                    .unwrap_or_else(|| {
-                        // TODO: Maybe using `$HOME/.config` as fallback will be good.
-                        // But now, let's just throw errors
-                        error("Unable to retrieve the configuration directory.");
-                        std::process::exit(1);
-                    })
-                    .display()
-                    .to_string()
-            ),
-            name
-        );
+        let path = match prefix {
+            Some(p) => {
+                format!("{}/{}.pl", p, name)
+            }
+            None => {
+                format!(
+                    "{}/{}.pl",
+                    PLAYLISTS_DIR.replace(
+                        "{}",
+                        &config_dir()
+                            .unwrap_or_else(|| {
+                                // TODO: Maybe using `$HOME/.config` as fallback will be good.
+                                // But now, let's just throw errors
+                                error("Unable to retrieve the configuration directory.");
+                                std::process::exit(1);
+                            })
+                            .display()
+                            .to_string()
+                    ),
+                    name
+                )
+            }
+        };
 
         // Log the creation of the new playlist
         info(format!("Creating new playlist: {}", name));

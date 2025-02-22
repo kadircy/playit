@@ -3,6 +3,7 @@
 ### Added
 - Added notification support when audio starts playing.
 - Added `--notification` option to CLI for changing notification text.
+- Added support for changing playlist directory to custom one.
 
 ### Changed
 - The option `--loop-playlist` changed to `--loop` because it can be flagged in both `playlist` and `play` mode.

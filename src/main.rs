@@ -49,6 +49,15 @@ pub struct Cli {
     #[clap(long, short = 'l')]
     playlist: Option<String>,
 
+    /// (PLAYLIST ONLY) Change the playlist directory to custom one.
+    ///
+    /// This option will change the playlist path from `$XDG_CONFIG_HOME/playit/<playlist>` to
+    /// `<prefix>/<playlist>`.
+    /// Also note that, all the playlist files should end with '.pl' extension and should be in
+    /// JSON format.
+    #[clap(long)]
+    prefix: Option<String>,
+
     /// (PLAYLIST ONLY) Add a new media item to the selected playlist.
     ///
     /// This option accepts a query (e.g., a song name or URL) to add a new media item to the playlist.
@@ -153,7 +162,7 @@ fn main() {
 
     // Handle playlist-related logic if specified
     if let Some(ref playlist_name) = args.playlist {
-        let mut playlist: Playlist = playlist::Playlist::new(playlist_name);
+        let mut playlist: Playlist = playlist::Playlist::new(playlist_name, args.prefix.as_deref());
 
         if std::fs::exists(&playlist.path).unwrap_or(false) {
             // Try reading the playlist if it exists
