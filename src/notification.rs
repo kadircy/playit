@@ -8,6 +8,7 @@ use std::process::Command;
 ///
 /// This function triggers the 'notify-send' command to display a notification and logs its status.
 /// Note that this function depends on `libnotify` library.
+/// TODO: Using an crate instead of running an child process will be more good
 pub fn send_notification(body: &str) {
     // Create a new Command to run the 'notify-send' program with the provided message
     let mut cmd = Command::new("notify-send");

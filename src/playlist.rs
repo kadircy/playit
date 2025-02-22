@@ -136,7 +136,7 @@ impl Playlist {
     pub fn remove(&mut self, query: &str) {
         // Find the index of the item that matches the query, and remove it if found.
         if let Some(index) = self.items.iter().position(|item| {
-            item == &search(&query).unwrap_or_else(|_| {
+            item == &search(query).unwrap_or_else(|_| {
                 error("Unable to get video url for query in delete operation.");
                 error("The playlist will play, but the media will stay.");
                 String::new()
