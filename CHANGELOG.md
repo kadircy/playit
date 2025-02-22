@@ -12,6 +12,7 @@
 ### Fix
 - Fixed an performance issue which causes to read playlist twice.
 - Fixed some unnecessary `.clone()` calls and more.
+- Fixed an bug where the playlist item will not remove unless the exact url given.
 
 ## [1.0.0] - 2025-02-17
 ### Added

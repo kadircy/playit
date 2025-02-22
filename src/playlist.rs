@@ -40,8 +40,8 @@ impl Playlist {
                         "{}",
                         &config_dir()
                             .unwrap_or_else(|| {
-                                // TODO: Maybe using `$HOME/.config` as fallback will be good.
-                                // But now, let's just throw errors
+                                // Added `--prefix` flag.
+                                // Don't need $HOME/.config fallback
                                 error("Unable to retrieve the configuration directory.");
                                 std::process::exit(1);
                             })
@@ -135,7 +135,13 @@ impl Playlist {
     /// This function does not return a value. If the URL is found, it is removed from the playlist.
     pub fn remove(&mut self, query: &str) {
         // Find the index of the item that matches the query, and remove it if found.
-        if let Some(index) = self.items.iter().position(|item| item == query) {
+        if let Some(index) = self.items.iter().position(|item| {
+            item == &search(&query).unwrap_or_else(|_| {
+                error("Unable to get video url for query in delete operation.");
+                error("The playlist will play, but the media will stay.");
+                String::new()
+            })
+        }) {
             self.items.remove(index);
             info(format!("Removed URL from playlist: {}", query)); // Log URL removal
         } else {
