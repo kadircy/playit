@@ -94,7 +94,8 @@ pub struct Cli {
     /// Send a notification when audio starts playing.
     ///
     /// This option will send a notification when the media started playing.
-    /// Use '{}' for showing url in notification text.
+    /// You can pass "" to not use notifications.
+    /// The '{}' will be replaced with media url.
     #[clap(long, short = 'n', default_value_t = String::from("Now playing: {}"))]
     notification: String,
 }
