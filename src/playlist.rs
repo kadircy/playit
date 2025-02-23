@@ -34,22 +34,28 @@ impl Playlist {
                 format!("{}/{}.pl", p, name)
             }
             None => {
-                format!(
-                    "{}/{}.pl",
-                    PLAYLISTS_DIR.replace(
-                        "{}",
-                        &config_dir()
-                            .unwrap_or_else(|| {
-                                // Added `--prefix` flag.
-                                // Don't need $HOME/.config fallback
-                                error("Unable to retrieve the configuration directory.");
-                                std::process::exit(1);
-                            })
-                            .display()
-                            .to_string()
-                    ),
-                    name
-                )
+                let dir = PLAYLISTS_DIR.replace(
+                    "{}",
+                    &config_dir()
+                        .unwrap_or_else(|| {
+                            // Added `--prefix` flag.
+                            // Don't need $HOME/.config fallback
+                            error("Unable to retrieve the configuration directory");
+                            std::process::exit(1);
+                        })
+                        .display()
+                        .to_string(),
+                );
+                if !fs::exists(&dir).unwrap_or(false) {
+                    info("Creating default directory for playlists");
+                    fs::create_dir(&dir).unwrap_or_else(|_| {
+                        error("Unable to create default directory for playlists");
+                        error("Consider using `--prefix` flag");
+                        error("Or create the directory manually: '~/.config/playit'");
+                        std::process::exit(1);
+                    });
+                }
+                format!("{}/{}.pl", &dir, &name)
             }
         };
 
