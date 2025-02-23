@@ -1,5 +1,10 @@
 # Changelog
 ## [Unreleased]
+### Added
+- Added caching support for avoiding unnecessary delay while playing audio.
+
+### Fixed
+- Fixed an bug where program panics if the playlist directory doesn't exists.
 
 ## [1.1.0] - 2025-02-22
 ### Added
