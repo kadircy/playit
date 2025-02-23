@@ -1,3 +1,4 @@
+pub mod cache;
 pub mod log;
 pub mod mpv;
 pub mod notification;
@@ -116,22 +117,49 @@ fn main() {
     let url: String = if let Some(ref playlist_name) = args.playlist {
         playlist_name.to_string()
     } else if let Some(play) = args.play {
-        // Handle provided URL or search query for YouTube
         if utils::is_url(&play) {
             info("Using provided URL directly.");
             play
         } else {
-            match youtube::search(&play) {
-                Ok(url) => url,
-                Err(e) => {
-                    error("Error fetching URL from YouTube.");
-                    error(&e); // Log the error details
-                    std::process::exit(1);
+            // Create an cache object
+            let mut cache = cache::Cache::new();
+            if let Err(e) = cache.read() {
+                warning("An error occured while reading cache file.");
+                error(&e);
+                warning("The caching will be not used.");
+                // Get the search result of url to use it without caching.
+                match youtube::search(&play) {
+                    Ok(search_url) => {
+                          search_url
+                    }
+                    Err(e) => {
+                        error("Error fetching URL from YouTube.");
+                        error(&e);
+                        std::process::exit(1);
+                    }
+                }
+            } else if let Some(cached_url) = cache.items.get(&play) {
+                // If the query is already cached, use it.
+                info("Using cached URL.");
+                cached_url.to_string()
+            } else {
+                // If the query is not cached, get search result of query and save it to the cache
+                // And use the result of search
+                match youtube::search(&play) {
+                    Ok(search_url) => {
+                        cache.add(&play, &search_url);
+                        cache.write().unwrap();
+                        search_url
+                    }
+                    Err(e) => {
+                        error("Error fetching URL from YouTube.");
+                        error(&e);
+                        std::process::exit(1);
+                    }
                 }
             }
         }
     } else {
-        // Handle missing `--playlist` or `--play`
         error("Either --playlist or --play must be provided.");
         std::process::exit(1);
     };
@@ -207,7 +235,7 @@ fn main() {
             let first_audio = playlist
                 .items
                 .first()
-                .expect("Playlist should not be empty");
+                .expect("Playlist should not be empty.");
             for media in &playlist.items[1..] {
                 mpv_args.insert(media.to_string(), None);
             }
@@ -221,7 +249,7 @@ fn main() {
 
 fn start_instance(url: &str, mpv_args: mpv::MpvArgs, notification: &str) {
     let mpv = mpv::Mpv::new(url.to_string(), Some(mpv_args));
-    info("Spawning mpv instance");
+    info("Spawning mpv instance.");
     let id = mpv.spawn();
     if !notification.is_empty() {
         send_notification(&notification.replace("{}", url));
