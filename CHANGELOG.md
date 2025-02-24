@@ -5,6 +5,7 @@
 
 ### Fixed
 - Fixed an bug where program panics if the playlist directory doesn't exists.
+- Fixed an bug where the program accepts empty `--play` and `--play-playlist` values.
 
 ## [1.1.0] - 2025-02-22
 ### Added
