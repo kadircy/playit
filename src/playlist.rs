@@ -111,6 +111,10 @@ impl Playlist {
     /// # Returns
     /// This function does not return a value. It updates the playlist items.
     pub fn add(&mut self, query: &str) {
+        if query.is_empty() {
+            warning("An empty query given to add to playlist. Ignoring.");
+            return;
+        }
         // If the query is not a valid URL, perform a search.
         let url = if is_url(query) {
             query.to_string() // Convert &str to String
@@ -140,6 +144,11 @@ impl Playlist {
     /// # Returns
     /// This function does not return a value. If the URL is found, it is removed from the playlist.
     pub fn remove(&mut self, query: &str) {
+        if query.is_empty() {
+            warning("An empty query given to remove from playlist. Ignoring.");
+            return;
+        }
+
         // Find the index of the item that matches the query, and remove it if found.
         if let Some(index) = self.items.iter().position(|item| {
             item == &search(query).unwrap_or_else(|_| {

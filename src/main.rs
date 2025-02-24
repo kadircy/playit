@@ -121,6 +121,10 @@ fn main() {
             info("Using provided URL directly.");
             play
         } else {
+            if play.is_empty() {
+                error("--play shouldn't be empty.");
+                std::process::exit(1);
+            }
             // Create an cache object
             let mut cache = cache::Cache::new();
             if let Err(e) = cache.read() {
@@ -129,9 +133,7 @@ fn main() {
                 warning("The caching will be not used.");
                 // Get the search result of url to use it without caching.
                 match youtube::search(&play) {
-                    Ok(search_url) => {
-                          search_url
-                    }
+                    Ok(search_url) => search_url,
                     Err(e) => {
                         error("Error fetching URL from YouTube.");
                         error(&e);
@@ -190,6 +192,10 @@ fn main() {
 
     // Handle playlist-related logic if specified
     if let Some(ref playlist_name) = args.playlist {
+        if playlist_name.is_empty() {
+            error("Playlist name shouldn't be empty.");
+            std::process::exit(1);
+        }
         let mut playlist: Playlist = playlist::Playlist::new(playlist_name, args.prefix.as_deref());
 
         if std::fs::exists(&playlist.path).unwrap_or(false) {

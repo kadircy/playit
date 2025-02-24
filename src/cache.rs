@@ -3,7 +3,7 @@ use dirs::cache_dir;
 use std::collections::HashMap;
 use std::fs;
 
-/// Cache file for storing querys and urls. 
+/// Cache file for storing querys and urls.
 const CACHE_FILE: &str = "{}/playit";
 
 /// Represents url cache for entire program.
