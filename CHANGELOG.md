@@ -1,5 +1,7 @@
 # Changelog
 ## [Unreleased]
+
+## [1.2.0] - 2025-02-25
 ### Added
 - Added caching support for avoiding unnecessary delay while playing audio.
 
